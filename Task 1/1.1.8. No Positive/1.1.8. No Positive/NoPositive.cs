@@ -12,7 +12,7 @@ namespace _1._1._8._No_Positive
 
         static void getNoPositive()
         {
-            int[,,] mas = { { { 1, 2, -3, 4 } }, { { 5, -6, -10, 11 } }, { { 2, 3, 4, 5 } } };
+            int[,,] mas = { { { 1, 2, -3, 4 } }, { { 5, -6, -10, 11 } }, { { 2, 3, 4, -5 } } };
             /*int[,,] mas = { { { -1, 0 }, { -3, 4 } },
                             { { -4, 5 }, { -6, 7 } },
                             { { -7, 8 }, { -9, 2 } },
@@ -27,7 +27,7 @@ namespace _1._1._8._No_Positive
             {
                 for (int j = 0; j < columns1; j++)
                 {
-                    for (int a =0; a < columns2; a++)
+                    for (int a = 0; a < columns2; a++)
                     {
                         if (mas[i, j, a] >= 0)
                         {
