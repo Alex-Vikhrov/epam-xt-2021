@@ -32,7 +32,7 @@ namespace _2._1._2._Custom_Paint
                 {
                     case 1:
                         /*string name = Console.ReadLine();*/// перенести в мейн
-                        User app = new User(Console.ReadLine());
+                        User app = new User(/*Console.ReadLine()*/);
                         app.DisplayStats();
                         break;
                     case 2:

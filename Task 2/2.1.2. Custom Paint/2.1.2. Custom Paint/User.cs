@@ -11,10 +11,10 @@ namespace _2._1._2._Custom_Paint
 
         // Конструкторы 
         //public User() { }
-        public User(string name)
+        public User(/*string name*/)
         {
             Console.WriteLine("Enter User Name:");
-            name = Console.ReadLine();// перенести в мейн
+            string name = Console.ReadLine();// перенести в мейн
             userName = name;
         }
         // Свойства
