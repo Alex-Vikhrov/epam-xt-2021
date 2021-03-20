@@ -7,12 +7,11 @@ namespace _2._2._1._Game_v2
     {
         static void Main(string[] args)
         {
-            Map map = new Map();
-            map.createMap();
-            map.DisplayStatsMap();
+            GameFlash game = new GameFlash(new WeatherMap());
+            game.Initialize();
 
             Console.WriteLine("** Параметры персонажа **");
-            Personage flash = new Personage();
+            Player flash = new Player();
             Console.WriteLine("Задайте параметры персонажу Flash:" + Environment.NewLine + "1) Heigt:");
             int value = ConsoleHelper.ReadIntValue();
             flash.Height = value;
@@ -25,7 +24,8 @@ namespace _2._2._1._Game_v2
             ConsoleHelper.ReadIntValue();
             flash.Force = value;
 
-
+            Enemies zoom = new Enemies();
+            zoom.GetEnemis();
         }
     }
 }
