@@ -7,24 +7,22 @@ namespace _1._1._2._Triangle
         static void Main(string[] args)
         {
             Console.WriteLine("*** Triangle ***");
-            getTriangle();
+            GetTriangle();
             Console.ReadLine();
         }
 
-        static void getTriangle()
+        static void GetTriangle()
         {
             Console.Write("Введите количество строк N:");
-            string tekst = Console.ReadLine();
-            int N = Convert.ToInt32(tekst);
+            int string_n = Int32.Parse(Console.ReadLine());
 
-            for (int i = 0; i < N; i++)
+            for (int row_counter = 0; row_counter < string_n; row_counter++)
             {
-                for (int j = 0; j <= i; j++)
+                for (int star = 0; star <= row_counter; star++)
                 {
                     Console.Write("*");
                 }
                 Console.WriteLine();
-               
             }
         }
     }
