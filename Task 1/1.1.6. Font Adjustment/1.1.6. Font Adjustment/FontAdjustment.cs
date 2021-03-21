@@ -8,80 +8,76 @@ namespace _1._1._6._Font_Adjustment
         static void Main(string[] args)
         {
             Console.WriteLine("*** Font Adjustment ***");
-            getFontAdjustment();
+            GetFontAdjustment();
         }
 
-        static void getFontAdjustment()
+        static void GetFontAdjustment()
         {
-            List<string> Font = new List<string>();
-            int numberFont;
+            List<string> fonts = new List<string>();
+            int numberFonts;
             do
             {
-                Console.Write("Введите:" + "\n" +
-                    "1: bold" + "\n" +
-                    "2: italic" + "\n" +
-                    "3: underline" + "\n" +
-                    "4: cancel" + "\n" +
+                Console.Write("Введите:" + Environment.NewLine +
+                    "1: bold" + Environment.NewLine +
+                    "2: italic" + Environment.NewLine +
+                    "3: underline" + Environment.NewLine +
+                    "4: cancel" + Environment.NewLine +
                     "5: exit");
                 Console.WriteLine();
                 // Проверка на число 
-                if (!Int32.TryParse(Console.ReadLine(), out numberFont))
+                if (!Int32.TryParse(Console.ReadLine(), out numberFonts))
                 {
                     Console.WriteLine("Введите число!");
+                    continue;
                 }
                 
-                switch (numberFont)
+                switch (numberFonts)
                 {
                     case 1:
-                        if (!Font.Contains("Bold"))
+                        if (!fonts.Contains("Bold"))
                         {
-                            Font.Add("Bold");
+                            fonts.Add("Bold");
                         }
                         else
                         {
-                            Font.Remove("Bold");
+                            fonts.Remove("Bold");
                         }
-                        Console.WriteLine("Параметры надписи:" + string.Join(", ", Font));
                         break;
 
                     case 2:
-                        if (!Font.Contains("Italic"))
+                        if (!fonts.Contains("Italic"))
                         {
-                            Font.Add("Italic");
+                            fonts.Add("Italic");
                         }
                         else
                         {
-                            Font.Remove("Italic");
+                            fonts.Remove("Italic");
                         }
-                        Console.WriteLine("Параметры надписи:" + string.Join(", ", Font));
                         break;
 
                     case 3:
-                        if (!Font.Contains("Underline"))
+                        if (!fonts.Contains("Underline"))
                         {
-                            Font.Add("Underline");
+                            fonts.Add("Underline");
                         }
                         else
                         {
-                            Font.Remove("Underline");
-                        }
-                        Console.WriteLine("Параметры надписи:" + string.Join(", ", Font));
+                            fonts.Remove("Underline");
+                        }       
                         break;
-                        // кейс 4 - не могу понять почему он не удаляет их всех 
                     case 4:
-                        if (!Font.Contains("Параметры надписи:"))
+                        if (!fonts.Contains("Параметры надписи:"))
                         {
-                            Font.Remove("Bold");
-                            Font.Remove("Underline");
-                            Font.Remove("Underline");
+                            fonts.Clear();
                         }
                         Console.WriteLine("Параметры надписи:");
                         break;
 
                     case 5:
-                        break;
+                        return;
                 }
-            } while (numberFont < 5);
+                Console.WriteLine("Параметры надписи:" + string.Join(", ", fonts));
+            } while (numberFonts < 5);
         }
     }
 }
