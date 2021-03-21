@@ -7,10 +7,10 @@ namespace _1._1._7._Array_Processing
         static void Main(string[] args)
         {
             Console.WriteLine("*** Array Processing ***");
-            getArrayProcessing();
+            GetArrayProcessing();
         }
 
-        static void getArrayProcessing()
+        static void GetArrayProcessing()
         {
             // Ввод чисел массива
             int x;
@@ -18,7 +18,7 @@ namespace _1._1._7._Array_Processing
             x = int.Parse(Console.ReadLine());
             int[] numbers = new int[x];
 
-            // Заполнение массива рандомными числами
+            //Заполнение массива рандомными числами
             Random r = new Random();
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -26,7 +26,7 @@ namespace _1._1._7._Array_Processing
             }
 
             // Сортировка рандомного массива
-            int sort;
+            int element;
 
             for (int i = 0; i < numbers.Length - 1; i++)
             {
@@ -34,35 +34,36 @@ namespace _1._1._7._Array_Processing
                 {
                     if (numbers[i] > numbers[j])
                     {
-                        sort = numbers[i];
+                        element = numbers[i];
                         numbers[i] = numbers[j];
-                        numbers[j] = sort;
+                        numbers[j] = element;
                     }
                 }
             }
+
+            // Сравнение максимального и минимального элемента в массиве 
+            int min = numbers[0];
+            int max = numbers[0];
+
+            foreach (int num in numbers)
+            {
+                if (min > num)
+                {
+                    min = num;
+                }
+                else if (max < num)
+                {
+                    max = num;
+                }
+            }
+            Console.WriteLine("Min:{0}", min);
+            Console.WriteLine("Max:{0}", max);
+
             // Вывод отсортированного массива 
             foreach (int i in numbers)
             {
                 Console.WriteLine(i);
             }
-
-            // Сравнение максимального и минимального элемента в массиве 
-            int max = numbers[0]; 
-            int min = numbers[0];
-
-            foreach (int num in numbers)
-            {
-                if(max < num)
-                {
-                    max = num;
-                }
-                else if (min > num) 
-                {
-                    min = num;
-                }
-            }
-            Console.WriteLine("Min:{0}", min);
-            Console.WriteLine("Max:{0}", max);
         }
     }
 }
