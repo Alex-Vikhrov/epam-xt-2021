@@ -7,22 +7,23 @@ namespace _1._1._9._Non_Negative_Sum
         static void Main(string[] args)
         {
             Console.WriteLine("*** NonNegativeSum ***");
-            getNonNegativeSum();
+            GetNonNegativeSum();
         }
 
-        static void getNonNegativeSum()
+        static void GetNonNegativeSum()
         {
             int[] mass = { 1, 2, 3, -4, -5, 10 };
 
-            int Sum=0;
+            int sum = 0;
             for(int i = 0; i < mass.Length; i++)
             {
-                if (mass[i] < 0)
+                if (mass[i] > 0)
                 {
-                    mass[i] = 0;
+                    //mass[i] = 0;
+                    //sum += mass[i];
+                    Console.WriteLine($"Sum = {sum += mass[i]}");
                 }
-
-                Console.WriteLine($"Sum = {Sum += mass[i]}");
+                //Console.WriteLine("sum = {0}", sum);
             }
         }
     }
