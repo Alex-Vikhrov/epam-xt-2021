@@ -7,20 +7,19 @@ namespace _1._1._4._X_Mas_Tree
         static void Main(string[] args)
         {
             Console.WriteLine("*** XMasTree ***");
-            getXMasTree();
+            GetXMasTree();
         }
 
-        static void getXMasTree()
+        static void GetXMasTree()
         {
             Console.Write("Введите количество треугольников N:");
-            string tekst = Console.ReadLine();
-            int N = Convert.ToInt32(tekst);
+            int string_N = Int32.Parse(Console.ReadLine());
 
-            for (int i = 0; i <= N; i++)
+            for (int i = 0; i <= string_N; i++)
             {
                 for (int j = 0; j <= i; j++)
                 {
-                    for (int k = 0; k <= (N - j - 1); k++)
+                    for (int k = 0; k <= (string_N - j - 1); k++)
                     {
                         Console.Write(" ");
                     }
