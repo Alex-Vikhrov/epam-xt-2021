@@ -8,16 +8,16 @@ namespace _1._2._3._LOWERCASE
         static void Main(string[] args)
         {
             Console.WriteLine("*** LOWERCASE ***");
-            calcLowercase();
+            СalcLowercase();
         }
 
-        static void calcLowercase()
+        static void СalcLowercase()
         {
             Console.WriteLine(" Введите предложение: ");
             string text = Console.ReadLine();
             int g = 0;
-            char [] symbol = new char[] { ' ', ',', '.' };
-            string [] words = text.Split(symbol, StringSplitOptions.RemoveEmptyEntries);// words Записывает слова
+            char [] symbols = new char[] { ' ', ',', '.' };
+            string [] words = text.Split(symbols, StringSplitOptions.RemoveEmptyEntries);// words Записывает слова
 
             for (int i = 0; i < words.Length; i++)
             {
