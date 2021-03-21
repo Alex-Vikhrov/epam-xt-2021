@@ -7,23 +7,22 @@ namespace _1._1._3._Another_Triangle_Versia__2
         static void Main(string[] args)
         {
             Console.WriteLine("*** Another Triangle V2 ***");
-            getAnotherTriangleV2();
+            GetAnotherTriangleV2();
             Console.ReadLine();
         }
 
-        static void getAnotherTriangleV2()
+        static void GetAnotherTriangleV2()
         {
             Console.Write("Введите количество строк N:");
-            string tekst = Console.ReadLine();
-            int N = Convert.ToInt32(tekst);
+            int string_N = Int32.Parse(Console.ReadLine());
 
-            for (int i = 0; i < N; i++)
+            for (int row_counter = 0; row_counter < string_N; row_counter++)
             {
-                for (int j = 0; j <= (N - i - 1); j++)
+                for (int space = 0; space <= (string_N - row_counter - 1); space++)
                 {
                     Console.Write(" ");
                 }
-                for (int k = 0; k < (i * 2 + 1); k++)
+                for (int star = 0; star < (row_counter * 2 + 1); star++)
                 {
                     Console.Write("*");
                 }
