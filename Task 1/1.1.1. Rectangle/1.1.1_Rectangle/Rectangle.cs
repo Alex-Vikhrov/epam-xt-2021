@@ -7,55 +7,57 @@ namespace _1._1._1_Rectangle
         static void Main(string[] args)
         {
             Console.WriteLine("***Rectangle***");
-            getSRectangle();
+            GetSRectangle();
             Console.Write("Нажмите ENTER для перехода ко 2 версии программы");
             Console.ReadLine();
-            getSRectangleVersia_2();
+            GetSRectangleVersia_2();
             Console.ReadLine();
         }
-        static void getSRectangle()
+        static void GetSRectangle()
         {
+
             Console.WriteLine("Введите сторону А:");
-            string A = Console.ReadLine();
-            int a = Convert.ToInt32(A);
+            bool value_a = Int32.TryParse(Console.ReadLine(), out int side_a);
+            if (value_a)
+                Console.WriteLine("Сторона А = {0}", side_a);
 
             Console.WriteLine("Введите сторону B:");
-            string B = Console.ReadLine();
-            int b = Convert.ToInt32(B);
+            bool value_b = Int32.TryParse(Console.ReadLine(), out int side_b);
+            if (value_b)
+                Console.WriteLine("Сторона B = {0}", side_b);
 
-            if (a == b || a <= 0 || b <= 0)
+            if (side_a == side_b || side_a <= 0 || side_b <= 0)
             {
-                Console.WriteLine("Вы ввели некорректное значение");
+                Console.WriteLine("Вы ввели некорректное значение, сторона A = {0} и B = {1}, не может иметь отрицательного значения или <null>," + Environment.NewLine + 
+                "или строкового значения.", side_a, side_b);
                 return;
             }
 
-            int S = a * b;
-            Console.WriteLine($"S = {S}");
+            int area = side_a * side_b;
+            Console.WriteLine($"S = {area}");
         }
-        static void getSRectangleVersia_2()
+        static void GetSRectangleVersia_2()
         {
             Func<int, int, bool> isSquare = (a, b) => a == b;
             Func<int, bool> isInvalidSide = a => a < 0;
 
             Console.WriteLine("Введите сторону А:");
-            string A = Console.ReadLine();
-            int a = Convert.ToInt32(A);
+            int side_a = Int32.Parse(Console.ReadLine()); 
 
             Console.WriteLine("Введите сторону B:");
-            string B = Console.ReadLine();
-            int b = Convert.ToInt32(B);
+            int side_b = Int32.Parse(Console.ReadLine());
 
-            if (isSquare(a, b))
+            if (isSquare(side_a, side_b))
             {
                 Console.WriteLine("Вы ввели квадрат");
-            } else if (isInvalidSide (a) || isInvalidSide(b))
+            } else if (isInvalidSide (side_a) || isInvalidSide(side_b))
             {
                 Console.WriteLine("Вы ввели некорректное значение");
                 return;
             }
 
-            int S = a * b;
-            Console.WriteLine($"S = {S}");
+            int area = side_a * side_b;
+            Console.WriteLine($"S = {area}");
         }
     }
 }
