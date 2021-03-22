@@ -11,6 +11,7 @@ namespace _2._1._1._Custom_String___v2
             strings.Concatenate(" )");
             strings.PrintResult();
             strings.Comparison(new char[] {'п','р','и'});
+            strings.SearchChar('р');
             
         }
     }

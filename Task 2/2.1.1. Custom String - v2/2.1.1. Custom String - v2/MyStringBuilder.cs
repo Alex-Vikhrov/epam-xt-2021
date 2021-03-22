@@ -44,7 +44,11 @@ namespace _2._1._1._Custom_String___v2
         // Метод поиска символов 
         public void SearchChar(char txt)
         {
-            
+            for (int i = 0; i < symbol.Length; i++)
+            {
+                if (symbol[i] == txt)
+                    Console.WriteLine(i);
+            }
         }
         // Метод конвертации из/в массив символов
         public void ConversionChar()
