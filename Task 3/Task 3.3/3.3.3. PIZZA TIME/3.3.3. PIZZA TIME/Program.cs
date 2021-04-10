@@ -7,7 +7,7 @@ namespace _3._3._3._PIZZA_TIME
         static void Main(string[] args)
         {
             PersonnelCollection person = new PersonnelCollection();
-            person.UsePersonnelCollection();
+            //person.UsePersonnelCollection();
             Console.WriteLine("----------------------------");
             person.UUsePersonnelCollection();
         }
