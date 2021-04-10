@@ -6,13 +6,13 @@ namespace _3._3._3._PIZZA_TIME
 {
     class Waiter: Personnel
     {
-        static void ShowMessage()
+        public void ShowMessage()
         {
             Console.WriteLine("Hello my name is{0} today I am your waiter");
             Console.WriteLine("Choose a pizza from the menu");
         }
 
-        static void GetOrderNumber()
+        public void GetOrderNumber()
         {
             Console.WriteLine("Please tell me your name:");
 
@@ -23,7 +23,7 @@ namespace _3._3._3._PIZZA_TIME
             {
                 number[i] = random.Next(1000);
             }
-            Console.WriteLine("{0} Your order number:{1}", myname, number);
+            Console.WriteLine("{0} Your order number:{1}" /*myname*/, number);
         }
     }
 }
