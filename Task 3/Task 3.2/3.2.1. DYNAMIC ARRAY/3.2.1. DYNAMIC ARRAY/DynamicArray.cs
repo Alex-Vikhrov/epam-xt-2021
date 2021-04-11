@@ -16,7 +16,7 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// </summary>
         public DynamicArray()
         {
-            this._array = new T[8];
+            _array = new T[8];
         }
 
         /// <summary>
@@ -24,6 +24,7 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// </summary>
         public DynamicArray(int _capacity)
         {
+            _capacity = Int32.Parse(Console.ReadLine());
             _array = new T[_capacity];
         }
 
@@ -33,16 +34,20 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// </summary>
         public DynamicArray(IEnumerable<T> enumerable)
         {
-            //_array = enumerable.ToArray();
+            _array = enumerable.ToArray();
         }
 
         /// <summary>
         /// 4. Метод Add, добавляющий в конец массива один элемент. При нехватке места для 
         /// добавления элемента, ёмкость массива должна удваиваться.
         /// </summary>
-        public void Add(T item) // А при добавлении элемета массива он пересоздавался 
+        public void Add(T item)
         {
-           
+           if (_length == Capacity)
+            {
+                Capacity *= 2;
+            }
+            _array[_length++] = item;
         }
 
         /// <summary>
@@ -51,7 +56,7 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// </summary>
         public void AddRange()
         {
-
+            
         }
 
         /// <summary>
@@ -87,23 +92,33 @@ namespace _3._2._1._DYNAMIC_ARRAY
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         /// 8. Свойство Length — получение количества элементов.
         /// </summary>
-        public int Length { get; set; }
+        public int Length { get => _length; }
 
         /// <summary>
         /// 9. Свойство Capacity — получение ёмкости: длины внутреннего массива.
         /// </summary>
-        public int Capacity { get; set; }
+        public int Capacity 
+        {
+            get => _capacity;
+            set
+            {
+                T[] newArray = new T[value];
+                if (_length > 0)
+                {
+                    Array.Copy(_array, 0, newArray, 0, _length);
+                }
+                _array = newArray;
+                _capacity = value;
+            }
+        }
 
         public int Count => throw new NotImplementedException();
 
@@ -118,9 +133,9 @@ namespace _3._2._1._DYNAMIC_ARRAY
 
         }
 
-        public interface IEnumerable<out T>: IEnumemerable
+        public interface IEnumerable<out T> : IEnumemerable
         {
-
+            T[] ToArray();
         }
         #endregion
     }
