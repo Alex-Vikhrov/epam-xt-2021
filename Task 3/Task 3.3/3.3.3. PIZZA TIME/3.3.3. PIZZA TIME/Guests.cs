@@ -9,7 +9,7 @@ namespace _3._3._3._PIZZA_TIME
         //private string _myname;
         static void EnterName()
         {
-           string myname = Console.ReadLine();
+           string myName = Console.ReadLine();
         }
     }
 }

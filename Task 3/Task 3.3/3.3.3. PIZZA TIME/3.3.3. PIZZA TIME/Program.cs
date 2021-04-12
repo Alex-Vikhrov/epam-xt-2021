@@ -8,8 +8,11 @@ namespace _3._3._3._PIZZA_TIME
         {
             PersonnelCollection person = new PersonnelCollection();
             //person.UsePersonnelCollection();
+            Waiter personnel = new Waiter("Olga", "Nesterova", 24);
+            personnel.ShowMessage();
             Console.WriteLine("----------------------------");
             person.UUsePersonnelCollection();
+            
         }
     }
 }

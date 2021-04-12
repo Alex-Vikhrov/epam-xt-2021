@@ -20,14 +20,16 @@ namespace _3._3._3._PIZZA_TIME
             BBQ,
             Mushroom,
             Clear,
+            Complete_order,
             Exit
         }
 
-        static void addPizza()
+        public void addPizza()
         {
             List<string> food = new List<string>();
             do
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("*** Menu ***");
                 Console.Write("Choose pizza:" + Environment.NewLine +
                    "1: Pepperoni" + Environment.NewLine +
@@ -42,7 +44,8 @@ namespace _3._3._3._PIZZA_TIME
                    "10: BBQ" + Environment.NewLine +
                    "11: Mushroom" + Environment.NewLine +
                    "12: Clear" + Environment.NewLine +
-                   "13: Exit");
+                   "13: Complete_order" + Environment.NewLine +
+                   "14: Exit");
                 Console.WriteLine();
 
                 MenuPizza pizza = (MenuPizza)Int32.Parse(Console.ReadLine());
@@ -166,9 +169,13 @@ namespace _3._3._3._PIZZA_TIME
                         }
                         Console.WriteLine("Choose pizza:");
                         break;
+                    case MenuPizza.Complete_order:
+                        return;
                     case MenuPizza.Exit:
                         return;
                 }
+                Console.Clear();
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("You chose pizza:" + string.Join(", ", food));
             } while (true);
         }

@@ -4,20 +4,23 @@ using System.Text;
 
 namespace _3._3._3._PIZZA_TIME
 {
-    class PersonnelCollection/*: IEnumerable */
+    class PersonnelCollection
     {
         #region List
 
         public void UUsePersonnelCollection()
         {
-            List<Personnel> personnels = new List<Personnel>();
-            personnels.Add(new Personnel("Olga", "Nesterova", 24));
-            personnels.Add(new Personnel("Maxim", "Smirnov", 20));
-            personnels.Add(new Personnel("Viktoria", "Filipova", 24));
-
-            foreach(Personnel p in personnels)
+            List<Personnel> personnels = new List<Personnel>
             {
-                Console.WriteLine(p);
+                new Personnel("Olga", "Nesterova", 24),
+                new Personnel("Maxim", "Smirnov", 20),
+                new Personnel("Viktoria", "Filipova", 24),
+                new Waiter ("Olga", "Ejak", 23)
+            };
+
+            foreach (Personnel p in personnels)
+            {
+                p.ShowMessage();
             }
         }
         #endregion

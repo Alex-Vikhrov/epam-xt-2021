@@ -10,10 +10,10 @@ namespace _3._3._3._PIZZA_TIME
         public string LastName { get; set; }
         public int Age { get; set; }
 
-        public Personnel()
-        {
+        //private Personnel()
+        //{
               
-        }
+        //}
 
         public Personnel(string firstName, string lastName, int age)
         {
@@ -22,6 +22,10 @@ namespace _3._3._3._PIZZA_TIME
             Age = age;
         }
 
+        public virtual void ShowMessage()
+        {
+            Console.WriteLine($"Hello my name is {this.FirstName} {this.LastName}, {this.Age} today I am your personnel");
+        }
         public override string ToString()
         {
             return $"Name:{FirstName} {LastName}, Age:{Age}";
