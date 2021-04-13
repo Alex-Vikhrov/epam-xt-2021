@@ -8,19 +8,19 @@ namespace _3._3._3._PIZZA_TIME
     {
         #region List
 
-        public void UUsePersonnelCollection()
+        public void UsePersonnelCollection()
         {
             List<Personnel> personnels = new List<Personnel>
             {
                 new Personnel("Olga", "Nesterova", 24),
                 new Personnel("Maxim", "Smirnov", 20),
                 new Personnel("Viktoria", "Filipova", 24),
-                new Waiter ("Olga", "Ejak", 23)
+                new Waiter("Kirill", "Odinzov", 28)
             };
 
             foreach (Personnel p in personnels)
             {
-                p.ShowMessage();
+                p.ShowMessage(); // Покажет весь персонал 
             }
         }
         #endregion

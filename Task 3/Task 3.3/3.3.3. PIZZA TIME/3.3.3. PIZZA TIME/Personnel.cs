@@ -10,11 +10,6 @@ namespace _3._3._3._PIZZA_TIME
         public string LastName { get; set; }
         public int Age { get; set; }
 
-        //private Personnel()
-        //{
-              
-        //}
-
         public Personnel(string firstName, string lastName, int age)
         {
             FirstName = firstName;

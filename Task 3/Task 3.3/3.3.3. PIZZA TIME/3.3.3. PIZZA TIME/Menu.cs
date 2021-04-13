@@ -170,7 +170,7 @@ namespace _3._3._3._PIZZA_TIME
                         Console.WriteLine("Choose pizza:");
                         break;
                     case MenuPizza.Complete_order:
-                        return;
+                        return;                
                     case MenuPizza.Exit:
                         return;
                 }

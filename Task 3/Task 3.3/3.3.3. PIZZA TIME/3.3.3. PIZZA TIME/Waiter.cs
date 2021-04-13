@@ -18,23 +18,26 @@ namespace _3._3._3._PIZZA_TIME
 
         public void GetOrderNumber()
         {
-            Console.WriteLine("Please tell me your name: {this.myName}");
+            Console.WriteLine("Please tell me your name:");
+            string myName = Console.ReadLine();
 
             int [] number = new int [1000];
             Random random = new Random ();
-
+            int num = 0;
             for (int i = 0; i < number.Length; i++)
             {
                 number[i] = random.Next(1000);
+                num = number[i];
             }
-            Console.WriteLine("{0} Your order number:{1}" /*myname*/, number);
+            Console.WriteLine("{0} Your order number:{1}", myName, num);
         }
 
         public void SuggestMenu()
         {
             Menu menu = new Menu();
             menu.addPizza();
-            this.GetOrderNumber();
+            GetOrderNumber();
+            Console.ReadLine();
         }
     }
 }
