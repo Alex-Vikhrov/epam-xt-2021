@@ -175,6 +175,7 @@ namespace _3._3._3._PIZZA_TIME
                         return;
                 }
                 Console.Clear();
+                Console.WriteLine("After selecting the pizza, press the number 13 to confirm the order");
                 Console.WriteLine("------------------------------");
                 Console.WriteLine("You chose pizza:" + string.Join(", ", food));
             } while (true);
