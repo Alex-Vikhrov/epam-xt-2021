@@ -27,7 +27,7 @@ namespace _3._3._1._SUPER_ARRAY
 
         public int CalcAverageValue(Func<int, int> value)
         {
-            return Array.Sum() / Array.Length;
+            return Array.Sum(value) / Array.Length;
         }
 
         public void GetFrequencyValue()
