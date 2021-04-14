@@ -24,7 +24,6 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// </summary>
         public DynamicArray(int _capacity)
         {
-            _capacity = Int32.Parse(Console.ReadLine());
             _array = new T[_capacity];
         }
 
@@ -35,6 +34,7 @@ namespace _3._2._1._DYNAMIC_ARRAY
         public DynamicArray(IEnumerable<T> enumerable)
         {
             _array = enumerable.ToArray();
+            Capacity = _length * 2;
         }
 
         /// <summary>
@@ -54,9 +54,12 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// 5. Метод AddRange, добавляющий в конец массива содержимое коллекции, реализующей 
         /// интерфейс IEnumerable<T>.
         /// </summary>
-        public void AddRange()
+        public void AddRange(IEnumemerable<T> coll)
         {
-            
+            int countColl = coll.Count();
+            while (Capacity < _length + countColl) Capacity *= 2;
+            _length = _length + countColl;
+            Array.Copy(coll.ToArrat(), 0, _array, _length, countColl);
         }
 
         /// <summary>
@@ -64,6 +67,14 @@ namespace _3._2._1._DYNAMIC_ARRAY
         /// </summary>
         public bool Remove(T item)
         {
+            for (int i = 0; i < _length; i++)
+            {
+                if (_array[i].Equals(item))
+                {
+                    Remove(i);
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -92,7 +103,10 @@ namespace _3._2._1._DYNAMIC_ARRAY
 
         public IEnumerator<T> GetEnumerator()
         {
-            return GetEnumerator();
+            for (int i = 0; i < _length; i++)
+            {
+                yield return _array[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
