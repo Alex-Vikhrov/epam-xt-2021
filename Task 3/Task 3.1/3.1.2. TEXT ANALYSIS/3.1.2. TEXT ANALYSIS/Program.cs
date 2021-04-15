@@ -23,6 +23,7 @@ namespace _3._1._2._TEXT_ANALYSIS
             string text = InputText();
             char[] symbols = new char[] { ' ', ',', '.', '?', '!', ':', ';', '№', '@', '-', '_' };
             string[] words = text.Split(symbols, StringSplitOptions.RemoveEmptyEntries);
+
             var result = words.GroupBy(w => w)
                               .Where(w => w.Count() > 1)
                               .Select(w => new { Word = w.Key, Frequency = w.Count() });
@@ -35,6 +36,7 @@ namespace _3._1._2._TEXT_ANALYSIS
                     "2. Повторяется: {1}",item.Word, item.Frequency);
                 Console.WriteLine("--------------------------------");
             }
+
             Console.Write("Нажмите клавишу enter, чтобы ознакомиться с рекомендацией.");
             Console.ReadLine();
             Console.Clear();

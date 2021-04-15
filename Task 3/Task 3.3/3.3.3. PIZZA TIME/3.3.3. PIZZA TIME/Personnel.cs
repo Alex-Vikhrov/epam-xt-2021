@@ -6,9 +6,9 @@ namespace _3._3._3._PIZZA_TIME
 {
     public class Personnel
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+        protected string FirstName { get; set; }
+        protected string LastName { get; set; }
+        protected int Age { get; set; }
 
         public Personnel(string firstName, string lastName, int age)
         {

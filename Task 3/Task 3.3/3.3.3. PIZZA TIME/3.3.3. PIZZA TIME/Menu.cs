@@ -24,7 +24,7 @@ namespace _3._3._3._PIZZA_TIME
             Exit
         }
 
-        public void addPizza()
+        public void AddPizza()
         {
             List<string> food = new List<string>();
             do

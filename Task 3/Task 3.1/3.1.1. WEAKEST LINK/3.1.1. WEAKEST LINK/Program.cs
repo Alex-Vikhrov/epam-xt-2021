@@ -30,6 +30,7 @@ namespace _3._1._1._WEAKEST_LINK
         static void CirleCalcPepole()
         {
             Queue<int> pepoleQ = new Queue<int>();
+
             int pepole = InputPepolN();
             Console.WriteLine("ВЫВОД: Сгенерирован круг людей. Начинаем вычеркивать каждого второго.");
 
