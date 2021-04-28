@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _3._3._3._PIZZA_TIME
 {
-    class Waiter: Personnel, ICanWorkWithMenu
+    public class Waiter: Personnel, ICanWorkWithMenu
     {
         public Waiter(string firstName, string lastName, int age): base(firstName, lastName, age)
         {
