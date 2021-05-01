@@ -19,8 +19,7 @@ header.CoffeTime{
     color: white;
     font-family: cursive;
 }
-li{
-
+.list{
     display: inline-block;
 }
 a{
