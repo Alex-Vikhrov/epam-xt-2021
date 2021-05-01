@@ -1,0 +1,31 @@
+body{
+    background-image: url("https://defleure.ru/wp-content/uploads/2020/02/kofe.jpg") ;
+}
+
+main{
+    height: 1000px;
+    width: 500px;
+    border: 3px solid black;
+    padding: 50px 100px;
+    margin: auto;
+    background-image: url("https://cdn02.plentymarkets.com/2brofzsczyt8/item/images/137527/full/Tapete--A-S---Cocktail--2--Vliestapete--94308-2--9.jpg");
+}
+
+header.CoffeTime{
+    background-image: url("https://st2.depositphotos.com/3730423/8637/i/950/depositphotos_86370580-stock-photo-elegant-background-coffee-bean-and.jpg");
+}
+.Coffe{
+    text-align: center;
+    color: white;
+    font-family: cursive;
+}
+li{
+
+    display: inline-block;
+}
+a{
+    color: white;
+    font-size: 24px ;
+    font-family: cursive;
+    font-weight: bold;
+}
