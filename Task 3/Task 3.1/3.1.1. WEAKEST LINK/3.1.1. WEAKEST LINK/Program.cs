@@ -7,7 +7,7 @@ namespace _3._1._1._WEAKEST_LINK
     {
         static void Main(string[] args)
         {
-            CirleCalcPepole();
+            CalcCirclePepole();
         }
 
         static int InputPepolN()
@@ -27,7 +27,7 @@ namespace _3._1._1._WEAKEST_LINK
             return pepole_N;
         }
 
-        static void CirleCalcPepole()
+        static void CalcCirclePepole()
         {
             Queue<int> pepoleQ = new Queue<int>();
 
@@ -51,42 +51,3 @@ namespace _3._1._1._WEAKEST_LINK
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-#region List
-
-//        //Console.WriteLine("ВЫВОД: Введите количество людей стоящих в кругу");
-
-//        //bool value = Int32.TryParse(Console.ReadLine(), out int pepol_n);
-
-//        //while (!value || pepol_n <= 2 )
-//        //{
-//        //    Console.WriteLine("Вы ввели некоректное значение, введите число людей в круге, в кругу должно быть минимум 2 человека! ");
-//        //    value = Int32.TryParse(Console.ReadLine(), out pepol_n);
-//        //}
-
-//        //Console.WriteLine("ВВОД: {0}", pepol_n);
-//        //}
-
-//        //static void CirleCalcPepole()
-//        //{
-//        //    List<int> people = new List<int>();
-//        //    Console.WriteLine("ВЫВОД: Введите количество людей стоящих в кругу");
-//        //    int n = PepolN();
-
-
-//        //}
-//    }
-//}
-#endregion

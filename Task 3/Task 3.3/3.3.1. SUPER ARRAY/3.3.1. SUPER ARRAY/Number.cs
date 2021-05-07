@@ -17,12 +17,6 @@ namespace _3._3._1._SUPER_ARRAY
         public int CalcSum(Func<int, int> selector)
         {
             return Array.Sum(selector);
-            //int sum = 0;
-            //foreach (var item in Array)
-            //{
-            //    sum += selector(item);
-            //}
-            //return sum;
         }
 
         public int CalcAverageValue(Func<int, int> value)
