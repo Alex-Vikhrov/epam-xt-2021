@@ -1,0 +1,25 @@
+nav{
+    background-color:brown;
+    max-width: 240px;
+    border-radius: 20px;
+    position: relative;
+    top: 20px;
+    left: 50px;
+    color: brown;
+    font-size: 15px;
+    font-weight: 600;
+}
+ul{
+    background-color:rgb(252, 226, 80);
+    border: 1px solid black;
+    border-radius: 20px;
+    list-style: none;
+    line-height: 1.6;
+    padding: 20px;
+    width: 200px;
+}
+.list{
+    position: relative;
+    bottom: 8px;
+    right: 8px;
+}
