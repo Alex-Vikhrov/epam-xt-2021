@@ -1,0 +1,79 @@
+/* body{
+    background-color: rgb(81, 93, 105);
+}
+figure{
+    position: relative;
+    left: 4%;
+}
+figcaption{
+    color: darkorange;
+}
+label{
+    text-align: center;
+}
+input{
+    color: white;
+    background-color: darkorange;
+    position: relative;
+    bottom: 18px;
+    left: 32%;
+    border: solid darkorange;
+    border-radius: 3px;
+}
+ul{
+    background-color: white;
+    border-radius: solid;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+li{
+    display: inline-block;
+/*     max-width: 500px; 
+}
+hr{
+    transform: rotate(90deg);
+    position: relative;
+    bottom: 130px;
+    left: 120px;
+    border: solid lightslategray;
+    border-radius: 5px;
+} */
+body{
+    background-color: rgb(81, 93, 105);
+}
+ul{
+    background-color: white;
+    border-radius: 10px;
+    width: 900px;
+    margin: 10px auto;
+}
+li{
+    display: inline-block;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.virtual{
+    border-right: 1px solid #000;
+    margin: 10px auto;
+    padding-right: 50px;
+}
+.server{
+    border-left: 1px solid #000;
+    margin: 10px auto;
+    padding-left: 50px;
+}
+figcaption{
+    color: darkorange;
+}
+p{
+    text-align: center;
+}
+input{
+    color: white;
+    background-color: darkorange;
+    border: solid darkorange;
+    border-radius: 3px;
+    position: relative;
+    bottom: 20px;
+    left: 33%;
+}
