@@ -1,10 +1,11 @@
-main{
+main {
     max-width: 1920px;
 }
 
-.arrow-back{
+.arrow-back {
     width: 100%;
 }
-.arrow{
+
+.arrow {
     width: 99%;
 }

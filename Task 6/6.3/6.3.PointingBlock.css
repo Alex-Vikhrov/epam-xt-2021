@@ -1,16 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     padding: 20px;
     background-color: rgb(104, 104, 104);
 }
-.main{
+
+main {
     margin: 0 auto;
 }
-.arrow-back{
+
+.arrow-back {
     background-color: rgb(140, 222, 255);
     width: 1200px;
     height: 110px;
@@ -19,17 +22,19 @@ body{
     position: relative;
     top: 50px;
 }
+
 .arrow-back:before {
     content: "";
     border: solid transparent;
-    position: absolute;   
+    position: absolute;
     bottom: 100%;
     left: 50%;
     border-bottom-color: rgb(140, 222, 255);
     border-width: 40px;
     margin-left: -40px;
-} 
-.arrow{
+}
+
+.arrow {
     background-color: rgb(89, 164, 211);
     width: 1200px;
     height: 100px;
@@ -38,17 +43,19 @@ body{
     position: relative;
     top: 5px;
 }
-.arrow:before{
+
+.arrow:before {
     content: "";
     border: solid transparent;
-    position: absolute;   
+    position: absolute;
     bottom: 100%;
     left: 50%;
     border-bottom-color: rgb(89, 164, 211);
     border-width: 40px;
     margin-left: -40px;
 }
-h1{
+
+h1 {
     color: white;
     position: relative;
     top: 30px;
