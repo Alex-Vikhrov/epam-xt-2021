@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Char Remover</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        const input = 'У попа была собака'.toUpperCase();
+        const words = input.split(' ');
+
+        // буквы, которые повторяются больше двух раз
+        const repeatedSymbolsMoreThanTwoTimes = [];
+
+
+        for (let i = 0; i < words.length; i++) {
+            const currentWord = words[i];
+            const repeatedSymbols = {}; // те символы, которые повторяются в текущем перебираемом слове
+
+            for (let j = 0; j < currentWord.length; j++) {
+                const symbol = currentWord[j];
+
+                repeatedSymbols[symbol] = (repeatedSymbols[symbol] || 0) + 1;
+            }
+
+            for (const [key, count] of Object.entries(repeatedSymbols)) {
+                if (count < 2) {
+                    repeatedSymbolsMoreThanTwoTimes.push(key);
+                }
+            }
+        }
+        alert(repeatedSymbolsMoreThanTwoTimes);
+    </script>
+</body>
+
+</html>
