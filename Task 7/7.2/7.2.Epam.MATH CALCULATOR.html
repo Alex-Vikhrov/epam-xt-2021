@@ -15,35 +15,53 @@
         function calcCalculator() {
             let arithmeticExp = prompt('Введите арифметическое выражение:', '0');
 
-            function checkOperation() {
+            let exp = arithmeticExp.split("");
+            let arrNumber = [];
+            let arrOperator = [];
+            let id = 0;
+            arrNumber[id] = "";
 
-                for (let i = 0; i < arithmeticExp.length; i++) {
-                    if (arithmeticExp[i] === '+') {
+            /* function getNumber() { */
 
-                    }
-                    if (arithmeticExp[i] === '-') {
-
-                    }
-                    if (arithmeticExp[i] === '*') {
-
-                    }
-                    if (arithmeticExp[i] === '/') {
-
-                    }
+            for (let n = 0; n < exp.length; n++) {
+                if (isNaN(parseInt(exp[n])) && exp[n] !== ".") {
+                    arrOperator[id] = exp[n];
+                    id++;
+                    arrNumber[id] = "";
+                } else {
+                    arrNumber[id] += exp[n];
                 }
             }
 
-            function getNumber() {
-                for (let j = 0; j < arithmeticExp.length; j++) {
-                    if (arithmeticExp[i] >= '0' && arithmeticExp[i] <= '9') {
-                        parseInt(arithmeticExp[i]) = num;
-                    } else if (arithmeticExp[i] === '.') {
+            /* return getNumber(); */
 
-                    }
+            let str = parseFloat(arrNumber[0]);
+
+            /* function checkOperation() { */
+
+            for (let op = 0; op < arrOperator.length; op++) {
+                let nummbers = parseFloat(arrNumber[op + 1]);
+                switch (arrOperator[op]) {
+                    case "+":
+                        str = str + nummbers;
+                        break;
+                    case "-":
+                        str = str - nummbers;
+                        break;
+                    case "*":
+                        str = str * nummbers;
+                        break;
+                    case "/":
+                        str = str / nummbers;
+                        break;
+
                 }
             }
+
+            /* return checkOperation(); */
+            alert(str.toFixed(2));
         }
-        alert(calculator());
+        calcCalculator();
     </script>
 </body>
 
