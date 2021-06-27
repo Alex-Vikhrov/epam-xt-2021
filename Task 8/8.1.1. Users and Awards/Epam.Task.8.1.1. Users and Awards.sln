@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam.UserAndAwards.ConsolePL", "Epam.UserAndAwards.ConsolePL\Epam.UserAndAwards.ConsolePL.csproj", "{D77FB2ED-10C2-4B50-9C12-2AC3B0300A31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam.UserAndAwards.BLL", "Epam.UserAndAwards.BLL\Epam.UserAndAwards.BLL.csproj", "{0180CA14-C9C9-4483-982A-04BE59FF712A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam.UserAndAwards.JsonDAL", "Epam.UserAndAwards.DAL\Epam.UserAndAwards.JsonDAL.csproj", "{81514663-A183-4AB0-9236-77265EE20CFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam.UserAndAwards.Entites", "Epam.UserAndAwards.Entites\Epam.UserAndAwards.Entites.csproj", "{806C5F36-4EFD-49B7-B664-1CE5CB7A5481}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{C6F4C507-73A0-402F-8DEA-1DA77196BC9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{3464CBC3-D713-4A8C-B601-911FA09F40B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{AB472697-46D2-4A79-B41D-5C7FF2FE83FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{699F24BB-2082-473E-8448-4782A1289068}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.UserAndAwards.Sql.DAL", "Epam.UserAndAwards.Sql.DAL\Epam.UserAndAwards.Sql.DAL.csproj", "{23A9CE6C-4D3F-41FF-932D-7EB924479840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.UserAndAwards.DAL.Interfaces", "Epam.UserAndAwards.DAL.Interfaces\Epam.UserAndAwards.DAL.Interfaces.csproj", "{14061D0C-E642-4B66-86CB-1F9F68F59CA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.UserAndAwards.Dependencies", "Epam.UserAndAwards.Dependencies\Epam.UserAndAwards.Dependencies.csproj", "{DD9F4ACD-76BE-440E-B849-9472F8DC4CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.UserAndAwards.BLL.Interfaces", "Epam.UserAndAwards.BLL.Interfaces\Epam.UserAndAwards.BLL.Interfaces.csproj", "{B105850A-F8FE-4731-9F92-C2C0F751D6C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D77FB2ED-10C2-4B50-9C12-2AC3B0300A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77FB2ED-10C2-4B50-9C12-2AC3B0300A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77FB2ED-10C2-4B50-9C12-2AC3B0300A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77FB2ED-10C2-4B50-9C12-2AC3B0300A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0180CA14-C9C9-4483-982A-04BE59FF712A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0180CA14-C9C9-4483-982A-04BE59FF712A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0180CA14-C9C9-4483-982A-04BE59FF712A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0180CA14-C9C9-4483-982A-04BE59FF712A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81514663-A183-4AB0-9236-77265EE20CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81514663-A183-4AB0-9236-77265EE20CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81514663-A183-4AB0-9236-77265EE20CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81514663-A183-4AB0-9236-77265EE20CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806C5F36-4EFD-49B7-B664-1CE5CB7A5481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806C5F36-4EFD-49B7-B664-1CE5CB7A5481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806C5F36-4EFD-49B7-B664-1CE5CB7A5481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806C5F36-4EFD-49B7-B664-1CE5CB7A5481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23A9CE6C-4D3F-41FF-932D-7EB924479840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A9CE6C-4D3F-41FF-932D-7EB924479840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A9CE6C-4D3F-41FF-932D-7EB924479840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A9CE6C-4D3F-41FF-932D-7EB924479840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14061D0C-E642-4B66-86CB-1F9F68F59CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14061D0C-E642-4B66-86CB-1F9F68F59CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14061D0C-E642-4B66-86CB-1F9F68F59CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14061D0C-E642-4B66-86CB-1F9F68F59CA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9F4ACD-76BE-440E-B849-9472F8DC4CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9F4ACD-76BE-440E-B849-9472F8DC4CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9F4ACD-76BE-440E-B849-9472F8DC4CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9F4ACD-76BE-440E-B849-9472F8DC4CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B105850A-F8FE-4731-9F92-C2C0F751D6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B105850A-F8FE-4731-9F92-C2C0F751D6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B105850A-F8FE-4731-9F92-C2C0F751D6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B105850A-F8FE-4731-9F92-C2C0F751D6C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D77FB2ED-10C2-4B50-9C12-2AC3B0300A31} = {3464CBC3-D713-4A8C-B601-911FA09F40B0}
+		{0180CA14-C9C9-4483-982A-04BE59FF712A} = {C6F4C507-73A0-402F-8DEA-1DA77196BC9D}
+		{81514663-A183-4AB0-9236-77265EE20CFE} = {AB472697-46D2-4A79-B41D-5C7FF2FE83FB}
+		{806C5F36-4EFD-49B7-B664-1CE5CB7A5481} = {699F24BB-2082-473E-8448-4782A1289068}
+		{23A9CE6C-4D3F-41FF-932D-7EB924479840} = {AB472697-46D2-4A79-B41D-5C7FF2FE83FB}
+		{14061D0C-E642-4B66-86CB-1F9F68F59CA2} = {AB472697-46D2-4A79-B41D-5C7FF2FE83FB}
+		{DD9F4ACD-76BE-440E-B849-9472F8DC4CED} = {699F24BB-2082-473E-8448-4782A1289068}
+		{B105850A-F8FE-4731-9F92-C2C0F751D6C2} = {C6F4C507-73A0-402F-8DEA-1DA77196BC9D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F0E5856-B464-49B8-B3E6-354B6806FB9C}
+	EndGlobalSection
+EndGlobal

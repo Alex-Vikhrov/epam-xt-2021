@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.UserAndAwards.BLL.Interfaces\Epam.UserAndAwards.BLL.Interfaces.csproj" />
+    <ProjectReference Include="..\Epam.UserAndAwards.BLL\Epam.UserAndAwards.BLL.csproj" />
+    <ProjectReference Include="..\Epam.UserAndAwards.DAL.Interfaces\Epam.UserAndAwards.DAL.Interfaces.csproj" />
+    <ProjectReference Include="..\Epam.UserAndAwards.DAL\Epam.UserAndAwards.JsonDAL.csproj" />
+    <ProjectReference Include="..\Epam.UserAndAwards.Sql.DAL\Epam.UserAndAwards.Sql.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

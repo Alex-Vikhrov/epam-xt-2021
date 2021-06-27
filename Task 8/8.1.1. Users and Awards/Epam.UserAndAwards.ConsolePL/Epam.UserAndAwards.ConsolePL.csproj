@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.UserAndAwards.BLL\Epam.UserAndAwards.BLL.csproj" />
+    <ProjectReference Include="..\Epam.UserAndAwards.Dependencies\Epam.UserAndAwards.Dependencies.csproj" />
+    <ProjectReference Include="..\Epam.UserAndAwards.Entites\Epam.UserAndAwards.Entites.csproj" />
+  </ItemGroup>
+
+</Project>
