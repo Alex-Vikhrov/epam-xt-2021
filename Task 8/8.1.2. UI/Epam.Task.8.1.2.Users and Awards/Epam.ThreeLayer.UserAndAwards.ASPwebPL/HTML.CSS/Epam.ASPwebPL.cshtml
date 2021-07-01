@@ -1,0 +1,74 @@
+﻿@{
+Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-language" content="RU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Vikhrov Alexandr" />
+    <meta name="reply-to" content="vih_64@mail.ru" />
+    <meta name="site-created" content="28.06.2021" />
+    <link href="Epam.ASPwebPL.css" type="text/css" rel="stylesheet">
+    <title>UserAndAwards</title>
+</head>
+
+<body>
+    <section>
+        <h1>UserAndAwards</h1>
+        <hr>
+        <!-- <div>
+            <img src="https://image.flaticon.com/icons/png/128/1250/1250368.png">
+        </div> -->
+        <form class="userandawards" action="/ASPwebPL" method="POST">
+            <ul>
+                <li>
+                    <div>
+                        <img src="https://image.flaticon.com/icons/png/128/1250/1250368.png">
+                    </div>
+                    <div class="user">
+                        <label for="firstname">Введите имя</label>
+                        <br>
+                        <input class="name" type="text" name="firstname" id="firstname">
+                        <br>
+                        <label for="dateOfBirth">Введите дату рождения</label>
+                        <br>
+                        <input class="date" type="date" name="dateofbirth" id="dateOfBirth">
+                        <br>
+                        <label for="age">Введите свой возраст</label>
+                        <br>
+                        <input class="age" type="number" name="age" id="age">
+                        <br>
+                        <input type="submit" value="Добавить пользователя">
+                        <br>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://image.flaticon.com/icons/png/128/1766/1766194.png">
+                    </div>
+                    <label for="awards">Введите награду</label>
+                    <br>
+                    <input class="awards" type="text" name="ad" id="awards">
+                    <br>
+                    <input type="submit" value="Добавить награду">
+                    <br>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://image.flaticon.com/icons/png/128/2260/2260996.png">
+                    </div>
+                    <input type="submit" value="Присвоить награду">
+                </li>
+            </ul>
+        </form>
+    </section>
+</body>
+
+</html>

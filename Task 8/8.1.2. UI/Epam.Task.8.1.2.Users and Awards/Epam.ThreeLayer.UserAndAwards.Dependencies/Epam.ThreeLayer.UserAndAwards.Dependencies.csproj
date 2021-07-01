@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0437E301-573D-4D52-BB86-87D04D81DC40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Epam.ThreeLayer.UserAndAwards.Dependencies</RootNamespace>
+    <AssemblyName>Epam.ThreeLayer.UserAndAwards.Dependencies</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.ThreeLayer.UserAndAwards.BLL.Interfaces\Epam.ThreeLayer.UserAndAwards.BLL.Interfaces.csproj">
+      <Project>{3d7633ca-95fc-4bfe-88eb-b5a65218a54a}</Project>
+      <Name>Epam.ThreeLayer.UserAndAwards.BLL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.ThreeLayer.UserAndAwards.BLL\Epam.ThreeLayer.UserAndAwards.BLL.csproj">
+      <Project>{f712ccce-9ba7-4dcc-a73b-66331accdcf4}</Project>
+      <Name>Epam.ThreeLayer.UserAndAwards.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.ThreeLayer.UserAndAwards.DAL.Interfaces\Epam.ThreeLayer.UserAndAwards.DAL.Interfaces.csproj">
+      <Project>{c511ee33-84a9-4230-ac3a-c78129a5ad79}</Project>
+      <Name>Epam.ThreeLayer.UserAndAwards.DAL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.ThreeLayer.UserAndAwards.JsonDAL\Epam.ThreeLayer.UserAndAwards.JsonDAL.csproj">
+      <Project>{c1949dfc-78be-4ec7-aee3-12418a9aedb9}</Project>
+      <Name>Epam.ThreeLayer.UserAndAwards.JsonDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.ThreeLayer.UserAndAwards.SqlDAL\Epam.ThreeLayer.UserAndAwards.SqlDAL.csproj">
+      <Project>{9f0fb52b-cfd8-4488-9789-93d1742956bd}</Project>
+      <Name>Epam.ThreeLayer.UserAndAwards.SqlDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
