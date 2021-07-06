@@ -1,0 +1,31 @@
+body{
+	font-family: 'Arimo', sans-serif;
+	margin: 0;
+	padding:0;
+        
+
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Roboto Slab', serif;
+}
+.navbar-main{
+	font-family: 'Roboto Slab', serif;
+	color:white;
+	font-weight: bold;
+	background-color: #4a4a4a;
+	border-radius: 0;
+	margin: 0;
+        opacity: 0.8;
+}
+
+.navbar-inverse .navbar-brand {
+  
+color: white;
+font-family:'Century Gothic';
+font-size:25px;
+}
+
+.navbar-top{
+color: red;
+font-family: 'Roboto Slab', serif;
+}
