@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{12EE15E0-499
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{92CAFE9B-5DCA-4C5A-8545-92F5F2D50FE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL", "Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL\Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL.csproj", "{377198E1-038E-4813-855B-3800CC4FA339}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.TL.OnlinePhoto.FlashPictures.BLL", "Epam.TL.OnlinePhoto.FlashPictures.BLL\Epam.TL.OnlinePhoto.FlashPictures.BLL.csproj", "{72C5500E-92D5-461E-B7FD-182BAF83EC64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.TL.OnlinePhoto.FlashPictures.BLL.Interfaces", "Epam.TL.OnlinePhoto.FlashPictures.Interfaces\Epam.TL.OnlinePhoto.FlashPictures.BLL.Interfaces.csproj", "{73D5DA37-8906-432B-B6B8-4C3FEE80076F}"
@@ -23,16 +21,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.TL.OnlinePhoto.FlashPi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.TL.OnlinePhoto.FlashPictures.DAL.Interfaces", "Epam.TL.OnlinePhoto.DAL.Interfaces\Epam.TL.OnlinePhoto.FlashPictures.DAL.Interfaces.csproj", "{54E19C57-9413-422E-B61C-F90B3F743A6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL", "Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL\Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL.csproj", "{6ADEDB5A-C262-4888-966E-6BDAD802E649}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{377198E1-038E-4813-855B-3800CC4FA339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{377198E1-038E-4813-855B-3800CC4FA339}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{377198E1-038E-4813-855B-3800CC4FA339}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{377198E1-038E-4813-855B-3800CC4FA339}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72C5500E-92D5-461E-B7FD-182BAF83EC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72C5500E-92D5-461E-B7FD-182BAF83EC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C5500E-92D5-461E-B7FD-182BAF83EC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,17 +49,21 @@ Global
 		{54E19C57-9413-422E-B61C-F90B3F743A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E19C57-9413-422E-B61C-F90B3F743A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E19C57-9413-422E-B61C-F90B3F743A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ADEDB5A-C262-4888-966E-6BDAD802E649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADEDB5A-C262-4888-966E-6BDAD802E649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADEDB5A-C262-4888-966E-6BDAD802E649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADEDB5A-C262-4888-966E-6BDAD802E649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{377198E1-038E-4813-855B-3800CC4FA339} = {92CAFE9B-5DCA-4C5A-8545-92F5F2D50FE7}
 		{72C5500E-92D5-461E-B7FD-182BAF83EC64} = {12EE15E0-4998-4E40-9767-31ADA10BA286}
 		{73D5DA37-8906-432B-B6B8-4C3FEE80076F} = {12EE15E0-4998-4E40-9767-31ADA10BA286}
 		{B042F7B3-FE7A-42BE-A706-A8BB05FD130D} = {394811B8-8C43-47C2-A5CF-72C8D87A73E2}
 		{247E4667-0FE4-4C12-9737-43501DCC2CE8} = {2ACF9B79-B890-4E6F-8943-9A61E483A074}
 		{54E19C57-9413-422E-B61C-F90B3F743A6D} = {2ACF9B79-B890-4E6F-8943-9A61E483A074}
+		{6ADEDB5A-C262-4888-966E-6BDAD802E649} = {92CAFE9B-5DCA-4C5A-8545-92F5F2D50FE7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05CA411D-CFA0-4857-845A-C14E741689CA}

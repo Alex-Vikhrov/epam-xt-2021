@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    <link href="~/Content/mystyles/Register.css" rel="stylesheet" type="text/css" />
+}
+<section class="reg-body">
+    <h1 id="Registration">
+        Регистрация
+    </h1>
+
+    <section id="Pryam">
+        <section id="Data">
+            <form action="javascript:void(0);" method="POST">
+                <fieldset class="clearfix">
+                    <span class="service-symbol"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                    <input type="text" value="Электронная почта" onblur="if (this.value == '') this.value = 'Электронная почта'" onfocus=" if (this.value == 'Электронная почта') this.value = ''" required>
+                    <span class="service-symbol"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                    <input type="text" value="Логин" onblur="if(this.value == '') this.value = 'Логин'" onfocus="if(this.value == 'Логин') this.value = ''" required>
+                    <span class="service-symbol"><i class="fa fa-key" aria-hidden="true"></i></span>
+                    <input type="password" value="Пароль" onblur="if(this.value == '') this.value = 'Пароль'" onfocus="if(this.value == 'Пароль') this.value = ''" required>
+                    <p><input type="submit" value="Зарегистрироваться"></p>
+                </fieldset>
+            </form>
+        </section>
+    </section>
+</section>

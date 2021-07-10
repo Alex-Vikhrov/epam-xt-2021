@@ -1,0 +1,21 @@
+﻿#nav {
+    background-color: rgba(136, 136, 136, 0.705) !important;
+}
+#footer {
+    text-align: center;
+    background-color: gray;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.mybody {
+    background: url("../myimages/fon2.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.header{
+    border: 1px solid black !important;
+}
