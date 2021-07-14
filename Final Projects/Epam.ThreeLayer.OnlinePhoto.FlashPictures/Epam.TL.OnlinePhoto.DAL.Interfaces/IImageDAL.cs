@@ -6,7 +6,7 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.DAL.Interfaces
 {
     public interface IImageDAL
     {
-        bool Add(Image data);
+        bool Add(Image image);
 
         bool Remove(Guid id);
 

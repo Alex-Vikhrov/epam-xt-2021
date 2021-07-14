@@ -6,7 +6,7 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.BLL.Interfaces
 {
     public interface IImageLogic
     {
-        bool Add(Image data);
+        bool Add(Image image);
 
         bool Remove(Guid id);
 

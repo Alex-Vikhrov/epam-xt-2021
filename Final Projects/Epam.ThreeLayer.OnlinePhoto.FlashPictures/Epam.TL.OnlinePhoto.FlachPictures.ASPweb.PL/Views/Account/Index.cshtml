@@ -1,23 +1,64 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@using Epam.TL.OnlinePhoto.FlashPictures.Dependencies;
+@using Epam.TL.OnlinePhoto.FlachPictures.ASPweb.PL.Models;
+@using NLog;
+
 @{
-    <link href="~/Content/mystyles/Account.css" type="text/css" rel="stylesheet" />
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Page.Title = "Страница входа";
+    Logger logger = LogManager.GetCurrentClassLogger();
+    logger.Info("User at Login Page");
+    PasswordHasher hasher = new PasswordHasher();
+    SearchUserAuthData userFoundState = new SearchUserAuthData();
+    string login = Request["login"];
+    try
+    {
+        if (IsPost)
+        {
+            userFoundState.LoginStatus(false);
+            string password = Request["password"];
+            if (DependencyResolver.Instance.UserLogic.UserAuthentication(login, hasher.GetHash(password)))
+            {
+                FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
+                Response.Redirect("~", false);
+            }
+            else
+            {
+                userFoundState.LoginStatus(true);
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        logger.Error(ex, "This exception came from login page.");
+    }
+}
+
+@{
+   <link href="~/Content/mystyles/Account.css" type="text/css" rel="stylesheet"/>
 }
 <section id="logo">
     <p><img src="~/Content/myimages/photo.png" width="275px"></p>
 </section>
+@if (!User.Identity.IsAuthenticated)
+{
 <section id="login">
-    <fieldset class="clearfix">
-
-        <span class="service-symbol"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-        <input type="text" name="Login" placeholder="Введите логин">
-        <span class="service-symbol"><i class="fa fa-key" aria-hidden="true"></i></span>
-        <input type="password" name="Password" placeholder="Введите пароль">
-        <div class="text-danger"></div>
-        <p><input type="submit" value="Войти"></p>
-
-    </fieldset>
+    <form action="" method="POST">
+        <fieldset class="clearfix">
+            <span class="service-symbol"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+            <input type="text" name="Login" placeholder="Введите логин" value="@login" required>
+            <span class="service-symbol"><i class="fa fa-key" aria-hidden="true"></i></span>
+            <input type="password" name="Password" placeholder="Введите пароль" required>
+            <div class="text-danger"></div>
+            <input type="submit" value="Войти">
+            <input type="submit" href="~/Views/Register/Index.cshtml" value="Регистрация">
+        </fieldset>
+        </form>
+    @if (IsPost && userFoundState.LoginIsFound)
+    {
+        <section class="alert">
+            Пользователь с таким логином/паролем не найден или не зарегистрирован.
+        </section>
     }
 </section>
+}
 

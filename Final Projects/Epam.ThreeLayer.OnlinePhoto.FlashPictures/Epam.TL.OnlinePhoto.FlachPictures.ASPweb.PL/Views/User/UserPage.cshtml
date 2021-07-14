@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="myhead">
+    <div class="menu">
+        <div class="image">
+            <img src="~/Content/myimages/basic_avatar.jpg" class="image">
+        </div>
+        <div class="name">
+            @Model.Login
+        </div>
+    </div>
+    <div class="site">
+        <div class="album">
+            @if ((string)Session["Login"] == Model.Login)
+            {
+                <p>My photos</p>
+            }
+            else
+            {
+                <p>Photos of @Model.Login</p>
+            }
+        </div>
+        @if (Session["Login"] != null && Model.Login == (string)Session["Login"])
+        {
+
+            <div class="myneed">
+                <form class="upload" method="POST" action="@Url.Action("UploadImage","Image")" enctype="multipart/form-data">
+                    <label for="uploadbtn" class="uploadButton">Загрузить фото</label>
+                    <input name="image" style="opacity: 0; z-index: -1;" type="file" id="uploadbtn">
+                    <button class="btn btn-success" type="submit">Отправить</button>
+                </form>
+            </div>
+        }
+        <div class="photos">
+            <ul id="wrapper" class="photos menu-horyzontal">
+                @Html.Action("GetImageContainer", "User", new { id = Model.Id })
+            </ul>
+        </div>
+    </div>
+</div>

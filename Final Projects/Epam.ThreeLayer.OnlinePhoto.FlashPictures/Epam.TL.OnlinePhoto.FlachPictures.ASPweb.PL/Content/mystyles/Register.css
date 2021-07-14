@@ -22,8 +22,9 @@
 }
 
 
-.reg-body {
+body {
     background: url("../myimages/regfon.jpg") no-repeat center top fixed;
+    width: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

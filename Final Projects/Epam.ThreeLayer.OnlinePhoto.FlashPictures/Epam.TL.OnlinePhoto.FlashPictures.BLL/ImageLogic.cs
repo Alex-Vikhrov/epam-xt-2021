@@ -17,9 +17,9 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.BLL
             this.likeDal = likeDal;
         }
 
-        public bool Add(Image data)
+        public bool Add(Image image)
         {
-            return imageDal.Add(data);
+            return imageDal.Add(image);
         }
 
         public Image Get(Guid id)

@@ -47,6 +47,13 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -108,7 +115,6 @@
     <Content Include="Content\myimages\2.jpg" />
     <Content Include="Content\myimages\3.jpg" />
     <Content Include="Content\myimages\33.jpg" />
-    <Content Include="Content\myimages\52.gif" />
     <Content Include="Content\myimages\8.jpg" />
     <Content Include="Content\myimages\Background.png" />
     <Content Include="Content\myimages\basic_avatar.jpg" />
@@ -116,8 +122,12 @@
     <Content Include="Content\myimages\blur3.jpg" />
     <Content Include="Content\myimages\Camera.png" />
     <Content Include="Content\myimages\city.jpg" />
-    <Content Include="Content\myimages\dr.jpg" />
+    <Content Include="Content\myimages\epam.png" />
+    <Content Include="Content\myimages\epam1.png" />
     <Content Include="Content\myimages\flash.png" />
+    <Content Include="Content\myimages\fon-foto.jpg" />
+    <Content Include="Content\myimages\fon-most.jpg" />
+    <Content Include="Content\myimages\fon-reg3.jpg" />
     <Content Include="Content\myimages\fon1.jpg" />
     <Content Include="Content\myimages\fon1.png" />
     <Content Include="Content\myimages\fon2.jpg" />
@@ -137,6 +147,8 @@
     <Content Include="Content\myimages\photiks.png" />
     <Content Include="Content\myimages\photo.png" />
     <Content Include="Content\myimages\pic_405.jpg" />
+    <Content Include="Content\myimages\reg-fon.jpg" />
+    <Content Include="Content\myimages\reg-fon2.jpg" />
     <Content Include="Content\myimages\rega.png" />
     <Content Include="Content\myimages\regfon.jpg" />
     <Content Include="Content\myimages\street.gif" />
@@ -189,6 +201,8 @@
     <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\PasswordHasher.cs" />
+    <Compile Include="Models\SearchUserAuthData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +210,8 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\User\ImageContainer.cshtml" />
+    <Content Include="Views\User\UserPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,6 +224,10 @@
       <Project>{72c5500e-92d5-461e-b7fd-182baf83ec64}</Project>
       <Name>Epam.TL.OnlinePhoto.FlashPictures.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Epam.TL.OnlinePhoto.FlashPictures.Dependencies\Epam.TL.OnlinePhoto.FlashPictures.Dependencies.csproj">
+      <Project>{d44b12e2-3106-408c-a30f-f2aadef4c693}</Project>
+      <Name>Epam.TL.OnlinePhoto.FlashPictures.Dependencies</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epam.TL.OnlinePhoto.FlashPictures.Entites\Epam.TL.OnlinePhoto.FlashPictures.Entites.csproj">
       <Project>{b042f7b3-fe7a-42be-a706-a8bb05fd130d}</Project>
       <Name>Epam.TL.OnlinePhoto.FlashPictures.Entites</Name>
@@ -217,11 +237,7 @@
       <Name>Epam.TL.OnlinePhoto.FlashPictures.BLL.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

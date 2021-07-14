@@ -1,0 +1,63 @@
+﻿<style>
+    .photos li {
+        position: relative;
+    }
+
+    .likes-container {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: absolute;
+        z-index: 5;
+        bottom: 2%;
+        color: white;
+        background-color: darksalmon;
+        width: 55px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+    }
+
+    .like-btn {
+        margin-right: 5px;
+    }
+
+    .delete-container {
+        z-index: 5;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 2%;
+        right: 1%;
+        text-align: center;
+        background-color: black;
+        color: white;
+        line-height: 20px;
+    }
+</style>
+@foreach (var img in Model)
+{
+    <li>
+
+        @if ((string)Session["Login"] == img.Creator.Login)
+        {<div class="delete-container">
+                <a href="@Url.Action("DeleteImage","User",new { imageId = img.Id})">X</a>
+            </div>
+        }
+
+        <a href="@Url.Action("GetImage","Image",new { id = img.Id})" data-lightbox="Vavation">
+            <img src="@Url.Action("GetImage","Image",new { id = img.Id})" />
+        </a>
+        <div class="likes-container">
+            @if ((string)Session["Login"] == null)
+            {
+                <i class="glyphicon glyphicon-heart"></i>@img.Likes
+            }
+            else
+            {
+                <a class="like-btn" href="@Url.Action("ToggleLike","User",new { imageId = img.Id})">
+            <i class="glyphicon glyphicon-heart"></i>
+                    </a>@img.Likes
+
+            }
+        </div>
+    </li>

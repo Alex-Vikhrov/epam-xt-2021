@@ -18,9 +18,19 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.BLL
             this.likeDal = likeDal;
         }
 
-        public bool Add(User data)
+        public bool Add(User user)
         {
-            return userDal.Add(data);
+            return userDal.Add(user);
+        }
+
+        public string[] CheckUserAuthData(string login, string email)
+        {
+            return userDal.CheckUserAuthData(login, email);
+        }
+
+        public bool UserAuthentication(string login, string hpassword)
+        {
+            return userDal.UserAuthentication(login, hpassword);
         }
 
         public User Get(string login)

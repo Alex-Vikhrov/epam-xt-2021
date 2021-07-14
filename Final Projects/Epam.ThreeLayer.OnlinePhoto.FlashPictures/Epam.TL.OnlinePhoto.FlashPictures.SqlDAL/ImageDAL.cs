@@ -16,20 +16,20 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             connectionString = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
         }
 
-        public bool Add(Image data)
+        public bool Add(Image image)
         {
-            if (data == null)
+            if (image == null)
             {
                 return false;
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand commander = new SqlCommand("INSERT INTO [Images] ([Id],[CreatorId][CreationDate],[ContentType],[Data]) VALUES(@Id,@CreatorId,@CreationDate,@ContentType,@Data)", connection);
-                commander.Parameters.AddWithValue("@Id", data.Id);
-                commander.Parameters.AddWithValue("@CreatorId", data.CreationId);
-                commander.Parameters.AddWithValue("@ContentType", data.ContentType);
-                commander.Parameters.AddWithValue("@CreationDate", data.CreationDate);
-                commander.Parameters.AddWithValue("@Data", data.Date);
+                commander.Parameters.AddWithValue("@Id", image.Id);
+                commander.Parameters.AddWithValue("@CreatorId", image.CreationId);
+                commander.Parameters.AddWithValue("@ContentType", image.ContentType);
+                commander.Parameters.AddWithValue("@CreationDate", image.CreationDate);
+                commander.Parameters.AddWithValue("@Data", image.Date);
                 connection.Open();
                 return commander.ExecuteNonQuery() > 0
 ;            }

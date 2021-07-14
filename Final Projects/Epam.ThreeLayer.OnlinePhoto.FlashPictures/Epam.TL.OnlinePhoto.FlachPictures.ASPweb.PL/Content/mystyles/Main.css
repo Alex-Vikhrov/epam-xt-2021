@@ -17,6 +17,7 @@
     -webkit-text-shadow: 0 0 10px #86ddff;
     text-shadow: 0 0 10px #86ddff;
 }
+
 .welcometwo {
     margin-top: 1.5%;
     font-family: "Blogger Sans";
@@ -26,6 +27,7 @@
     box-shadow: inset 0 0 30px #3df;
     padding: 5px;
 }
+
 .myhead {
     background-size: cover;
     max-width: 100%;

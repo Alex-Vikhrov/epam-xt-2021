@@ -15,23 +15,71 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             connectionString = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
         }
 
-        public bool Add(User data)
+        public bool Add(User user)
         {
-            if (data == null)
+            if (user == null)
             {
                 return false;
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand commander = new SqlCommand("INSERT INTO [Users] ([Id],[Login],[Password],[Email]) VALUES(@Id,@Login,@Password,@Email)", connection);
-                commander.Parameters.AddWithValue("@Login", data.Login);
-                commander.Parameters.AddWithValue("@Password", data.Password);
-                commander.Parameters.AddWithValue("@Id", data.Id);
-                commander.Parameters.AddWithValue("@Email", data.Email);
+                commander.Parameters.AddWithValue("@Login", user.Login);
+                commander.Parameters.AddWithValue("@Password", user.Password);
+                commander.Parameters.AddWithValue("@Id", user.Id);
+                commander.Parameters.AddWithValue("@Email", user.Email);
                 connection.Open();
                 return commander.ExecuteNonQuery() > 0;
             }
             throw new NullReferenceException();
+        }
+
+        public string[] CheckUserAuthData(string login, string email)
+        {
+            using (SqlConnection _connection = new SqlConnection(connectionString))
+            {
+                string[] result = new string[2];
+                var Users_CheckLoginAndEmail = "SearchAuthData";
+                SqlCommand command = new SqlCommand(Users_CheckLoginAndEmail, _connection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                command.Parameters.AddWithValue("@Login", login);
+                command.Parameters.AddWithValue("@Email", email);
+                _connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (login == (string)reader[0])
+                        result[0] = login;
+                    if (email == (string)reader[1])
+                        result[1] = email;
+                    return result;
+                }
+                return result;
+            }
+        }
+
+        public bool UserAuthentication(string login, string hpassword)
+        {
+            using (SqlConnection _connection = new SqlConnection(connectionString))
+            {
+                var Users_CheckLoginAndPassword = "ValidateAuthData";
+                SqlCommand command = new SqlCommand(Users_CheckLoginAndPassword, _connection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                command.Parameters.AddWithValue("@Login", login);
+                command.Parameters.AddWithValue("@Password", hpassword);
+                _connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (login == (string)reader[0] && hpassword == (string)reader[1])
+                        return true;
+                }
+                return false;
+            }
         }
 
         public User Get(string login)

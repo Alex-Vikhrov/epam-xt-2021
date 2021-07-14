@@ -6,7 +6,11 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.DAL.Interfaces
 {
     public interface IUserDAL
     {
-        bool Add(User data);
+        string[] CheckUserAuthData(string login, string email);
+
+        bool UserAuthentication(string login, string hpassword);
+
+        bool Add(User user);
 
         bool Remove(string login);
 
