@@ -158,6 +158,7 @@
     <Content Include="Content\myfonts\PT_Sans_Bold.ttf" />
     <Content Include="Content\myfonts\Ralington.otf" />
     <Content Include="Content\mystyles\Account.css" />
+    <Content Include="Content\mystyles\Error.css" />
     <Content Include="Content\mystyles\Main.css" />
     <Content Include="Content\mystyles\Register.css" />
     <Content Include="Content\mystyles\_Layout.css" />
@@ -212,6 +213,7 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\User\ImageContainer.cshtml" />
     <Content Include="Views\User\UserPage.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

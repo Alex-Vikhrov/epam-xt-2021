@@ -36,17 +36,17 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
 
         public string[] CheckUserAuthData(string login, string email)
         {
-            using (SqlConnection _connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string[] result = new string[2];
                 var Users_CheckLoginAndEmail = "SearchAuthData";
-                SqlCommand command = new SqlCommand(Users_CheckLoginAndEmail, _connection)
+                SqlCommand command = new SqlCommand(Users_CheckLoginAndEmail, connection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@Email", email);
-                _connection.Open();
+                connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -62,16 +62,16 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
 
         public bool UserAuthentication(string login, string hpassword)
         {
-            using (SqlConnection _connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 var Users_CheckLoginAndPassword = "ValidateAuthData";
-                SqlCommand command = new SqlCommand(Users_CheckLoginAndPassword, _connection)
+                SqlCommand command = new SqlCommand(Users_CheckLoginAndPassword, connection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@Password", hpassword);
-                _connection.Open();
+                connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {

@@ -1,0 +1,38 @@
+﻿@font-face {
+    font-family: 'Peace Sans';
+    src: url('../myfonts/Ralington.otf');
+}
+
+@font-face {
+    font-family: 'Blogger Sans';
+    src: url('../myfonts/Blogger Sans.otf');
+}
+
+body {
+    background: url('../myimages/fon2.jpg') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#h1 {
+    font-family: "Peace Sans";
+    font-size: 58px;
+    color: white;
+    text-align: center;
+    -moz-text-shadow: 0 0 10px #86ddff;
+    -webkit-text-shadow: 0 0 10px #86ddff;
+    text-shadow: 0 0 10px #86ddff;
+}
+.error {
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    font-family: 'Blogger Sans';
+}
+.myerror {
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    background-color: rgba(0,0,0,.7);
+}
