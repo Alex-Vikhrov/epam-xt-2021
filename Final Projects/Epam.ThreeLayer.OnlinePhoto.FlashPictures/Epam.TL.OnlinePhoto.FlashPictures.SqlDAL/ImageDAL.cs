@@ -24,12 +24,13 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("INSERT INTO [Images] ([Id],[CreatorId][CreationDate],[ContentType],[Data]) VALUES(@Id,@CreatorId,@CreationDate,@ContentType,@Data)", connection);
+                var AddImage = "AddImage";
+                SqlCommand commander = new SqlCommand(AddImage/*"INSERT INTO [Image] ([Id],[CreationId][CreationDate],[ContentType],[Date]) VALUES(@Id,@CreationId,@CreationDate,@ContentType,@Date)"*/, connection);
                 commander.Parameters.AddWithValue("@Id", image.Id);
-                commander.Parameters.AddWithValue("@CreatorId", image.CreationId);
+                commander.Parameters.AddWithValue("@CreationId", image.CreationId);
                 commander.Parameters.AddWithValue("@ContentType", image.ContentType);
                 commander.Parameters.AddWithValue("@CreationDate", image.CreationDate);
-                commander.Parameters.AddWithValue("@Data", image.Date);
+                commander.Parameters.AddWithValue("@Date", image.Date);
                 connection.Open();
                 return commander.ExecuteNonQuery() > 0
 ;            }
@@ -40,7 +41,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SELECT[Id],[CreatorId],[CreationDate],[ContentType],[Data] FROM [Images] WHERE [Id]=@id", connection);
+                var ImageGetById = "ImageGetById";
+                SqlCommand commander = new SqlCommand(ImageGetById/*"SELECT[Id],[CreationId],[CreationDate],[ContentType],[Date] FROM [Image] WHERE [Id]=@id"*/, connection);
                 commander.Parameters.AddWithValue("@id", id);
                 connection.Open();
 
@@ -51,7 +53,7 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
                 }
                 return new Image()
                 {
-                    CreationId = (Guid)reader["CreatorId"],
+                    CreationId = (Guid)reader["CreationId"],
                     CreationDate = (DateTime)reader["CreationDate"],
                     ContentType = (string)reader["ContentType"],
                     Id = (Guid)reader["Id"],
@@ -65,7 +67,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SELECT [Id],[CreatorId],[CreationDate],[ContentType],[Data] FROM [Images]", connection);
+                var GetAllImage = "GetAllImage";
+                SqlCommand commander = new SqlCommand(GetAllImage/*"SELECT [Id],[CreationId],[CreationDate],[ContentType],[Date] FROM [Image]"*/, connection);
                 connection.Open();
 
                 var reader = commander.ExecuteReader();
@@ -96,7 +99,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("DELETE FROM [Images] WHERE [Id]=@id", connection);
+                var DeleteImage = "DeleteImage";
+                SqlCommand commander = new SqlCommand(DeleteImage/*"DELETE FROM [Image] WHERE [Id]=@id"*/, connection);
                 commander.Parameters.AddWithValue("@id", id);
                 connection.Open();
                 return commander.ExecuteNonQuery() > 0;
@@ -107,7 +111,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("UPDATE SET [ContentType] = @ContentType,[Data] = @Data WHERE [Id]=@id", connection);
+                var UpdateImage = "UpdateImage";
+                SqlCommand commander = new SqlCommand(UpdateImage/*"UPDATE SET [ContentType] = @ContentType,[Date] = @Date WHERE [Id]=@id"*/, connection);
                 commander.Parameters.AddWithValue("@Id", data.Id);
                 commander.Parameters.AddWithValue("@ContentType", data.ContentType);
                 commander.Parameters.AddWithValue("@Date", data.Date);

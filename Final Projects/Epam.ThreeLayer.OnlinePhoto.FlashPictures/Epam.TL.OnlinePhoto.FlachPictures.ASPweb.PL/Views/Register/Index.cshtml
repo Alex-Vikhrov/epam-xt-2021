@@ -31,8 +31,7 @@
             {
                 string password = Request["password"];
                 User user = new User();
-                DependencyResolver.Instance.UserLogic.Add(user);
-                //Response.Redirect("~/Pages/LogIn", false);
+                DependencyResolver.Instance.UserLogic.Add(user);;
             }
         }
     }

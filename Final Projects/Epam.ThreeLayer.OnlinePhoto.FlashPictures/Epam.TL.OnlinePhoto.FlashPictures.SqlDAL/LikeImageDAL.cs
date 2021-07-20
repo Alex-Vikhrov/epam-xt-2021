@@ -24,7 +24,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("INSERT INTO [LikeImageRels] ([UserId],[ImageId]) VALUES(@UserId,@ImageId)", connection);
+                var AddLikeImage = "AddLikeImage";
+                SqlCommand commander = new SqlCommand(AddLikeImage/*"INSERT INTO [LikeImage] ([UserId],[ImageId]) VALUES(@UserId,@ImageId)"*/, connection);
                 commander.Parameters.AddWithValue("@UserId", data.UserId);
                 commander.Parameters.AddWithValue("@ImageId", data.ImageId);
                 connection.Open();
@@ -37,7 +38,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SELECT [UserId],[ImageId] FROM [LikeImageRels] WHERE ([UserId]=@UserId AND [ImageId] = @ImageId)", connection);
+                var LikeImageGetById = "LikeImageGetById";
+                SqlCommand commander = new SqlCommand(LikeImageGetById/*"SELECT [UserId],[ImageId] FROM [LikeImage] WHERE ([UserId]=@UserId AND [ImageId] = @ImageId)"*/, connection);
                 commander.Parameters.AddWithValue("@UserId", userId);
                 commander.Parameters.AddWithValue("@ImageId", imageId);
                 connection.Open();
@@ -59,7 +61,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SELECT [UserId],[Imageid] FROM [LikeImageRels]", connection);
+                var GetAllLikeImage = "GetAllLikeImage";
+                SqlCommand commander = new SqlCommand(GetAllLikeImage/*"SELECT [UserId],[ImageId] FROM [LikeImage]"*/, connection);
                 connection.Open();
                 var reader = commander.ExecuteReader();
                 while (reader.Read())
@@ -86,7 +89,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("DELETE FROM [LikeImage] WHERE ([UserId]=@UserId AND [ImageId] = @ImageId)", connection);
+                var DeleteLikeImage = "DeleteLikeImage";
+                SqlCommand commander = new SqlCommand(DeleteLikeImage/*"DELETE FROM [LikeImage] WHERE ([UserId]=@UserId AND [ImageId] = @ImageId)"*/, connection);
                 commander.Parameters.AddWithValue("@UserId", userId);
                 commander.Parameters.AddWithValue("@ImageId", imageId);
                 connection.Open();

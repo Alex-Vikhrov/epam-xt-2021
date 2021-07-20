@@ -1,0 +1,14 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE dbo.DeleteImage
+	@id uniqueidentifier
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+    DELETE FROM [Image] WHERE [Id]=@id
+END
+GO

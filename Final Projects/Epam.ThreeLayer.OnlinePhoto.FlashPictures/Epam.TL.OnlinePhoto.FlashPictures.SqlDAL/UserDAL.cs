@@ -23,7 +23,9 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("INSERT INTO [Users] ([Id],[Login],[Password],[Email]) VALUES(@Id,@Login,@Password,@Email)", connection);
+                var AddUser = "AddUser";
+                SqlCommand commander = new SqlCommand(AddUser
+                    /*"INSERT INTO dbo.Users (Id,Login,Password,Email)" + " VALUES(@Id,@Login,@Password,@Email)"*/, connection);
                 commander.Parameters.AddWithValue("@Login", user.Login);
                 commander.Parameters.AddWithValue("@Password", user.Password);
                 commander.Parameters.AddWithValue("@Id", user.Id);
@@ -86,7 +88,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SELECT [Id],[Login],[Password],[Email] FROM [Users] WHERE [Login]=@Login", connection);
+                var GetByLogin = "GetUserByLogin";
+                SqlCommand commander = new SqlCommand(GetByLogin/*"SELECT Id,Login,Password,Email FROM Users WHERE Login=@Login"*/, connection);
                 commander.Parameters.AddWithValue("@Login", login);
                 connection.Open();
 
@@ -110,7 +113,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using(SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SELECT [Id],[Login],[Password],[Email], FROM [Users]", connection);
+                var GetAllUser = "GetAllUser";
+                SqlCommand commander = new SqlCommand(GetAllUser/*"SELECT Id,Login,Password,Email, FROM Users"*//*"SELECT [Id],[Login],[Password],[Email], FROM [Users]"*/, connection);
                 connection.Open();
 
                 var reader = commander.ExecuteReader();
@@ -131,7 +135,9 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("SLECT [Id],[Login],[Passwor],[Email] FROM [Users] WHERE [Id]=@Id", connection);
+                var stProc = "User_GetById";
+
+                SqlCommand commander = new SqlCommand(stProc/*"SLECT [Id],[Login],[Passwor],[Email] FROM [Users] WHERE [Id]=@Id"*/, connection);
                 commander.Parameters.AddWithValue("@Id", id);
                 connection.Open();
                 var reader = commander.ExecuteReader();
@@ -163,7 +169,8 @@ namespace Epam.TL.OnlinePhoto.FlashPictures.SqlDAL
             }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand commander = new SqlCommand("DELETE FROM [USER] WHERE [Login]=@Login", connection);
+                var RemoveUser = "DeleteUser";
+                SqlCommand commander = new SqlCommand(RemoveUser/*"DELETE FROM Users WHERE Login=@Login"*//*"DELETE FROM [USER] WHERE [Login]=@Login"*/, connection);
                 commander.Parameters.AddWithValue("@Login", login);
                 connection.Open();
                 return commander.ExecuteNonQuery() > 0;
