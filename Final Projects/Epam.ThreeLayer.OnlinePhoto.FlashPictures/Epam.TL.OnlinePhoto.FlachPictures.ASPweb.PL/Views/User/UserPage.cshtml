@@ -25,7 +25,7 @@
         {
 
             <div class="myneed">
-                <form class="upload" method="POST" action="@Url.Action("UploadImage","Image")" enctype="multipart/form-data">
+                <form class="upload" method="POST" action="("UploadImage","Image")" enctype="multipart/form-data">
                     <label for="uploadbtn" class="uploadButton">Загрузить фото</label>
                     <input name="image" style="opacity: 0; z-index: -1;" type="file" id="uploadbtn">
                     <button class="btn btn-success" type="submit">Отправить</button>
@@ -34,7 +34,7 @@
         }
         <div class="photos">
             <ul id="wrapper" class="photos menu-horyzontal">
-                @Html.Action("GetImageContainer", "User", new { id = Model.Id })
+                @*@("GetImageContainer", "User", new { id = Model.Id })*@
             </ul>
         </div>
     </div>
