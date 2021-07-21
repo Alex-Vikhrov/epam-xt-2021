@@ -1,0 +1,2 @@
+BACKUP DATABASE [Epam.FlaschPictures.Users] TO  DISK = N'C:\Program Files\SQL BD\MSSQL15.SQLEXPRESS\MSSQL\Backup\Epam.FlaschPictures.Users.bak' WITH NOFORMAT, NOINIT,  NAME = N'Epam.FlaschPictures.Users-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+GO
